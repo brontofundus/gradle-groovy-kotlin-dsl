@@ -1,0 +1,32 @@
+debug: true
+
+server:
+  port: 8080
+  servlet:
+    context-path: "/example/service"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,health,prometheus
+
+logging:
+  level:
+    org.springframework.web.servlet: INFO
+spring:
+  thymeleaf:
+    cache: false
+
+example:
+  service:
+    version: ${EXAMPLE_SERVICE_JAR_VERSION:'latest'}
+
+service:
+  environment: ${SERVICE_ENVIRONMENT:'localhost'}
+
+springfox:
+  documentation:
+    swagger:
+      v2:
+        path: /swagger.json

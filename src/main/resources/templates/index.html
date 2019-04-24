@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="'EDWH Releases Service - Welcome'"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>EDWH Releases Service</h1>
+    <p>aktualisiert: <span th:if="${refreshDate} != null" th:text="${#dates.format(refreshDate, 'dd.MM.yyyy HH:mm')}" /></p>
+    <p>Version: <span th:text="${applicationVersion}" /> // Environment: <span th:text="${environment}" /> // Spring Boot Version: <span th:text="${bootVersion}" /> // Active Profiles: <span th:text="${activeProfiles}" /></p>
+</body>
+</html>
